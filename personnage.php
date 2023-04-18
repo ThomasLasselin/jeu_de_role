@@ -4,6 +4,7 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "jeu_de_role";
+include "header.php";
 
 try {
 	$pdo = new PDO('mysql:host=' . $servername . ';dbname=' . $dbname, $username, $password);
@@ -19,31 +20,6 @@ if ($stmt->execute()) {
 }
 
 ?>
-<!DOCTYPE html>
-<html>
-
-<head>
-	<title>Jeu de rôle médiéval</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
-</head>
-
-<body>
-	<header>
-		<h1>Jeu de rôle médiéval</h1>
-		<nav>
-			<ul>
-				<li><a href="jeu.php">Accueil</a></li>
-				<li><a href="#">Profil</a></li>
-				<li><a href="personnages.php">Personnages</a></li>
-				<li><a href="#">Quêtes</a></li>
-				<li><a href="deconnexion.php">Déconnexion</a></li>
-			</ul>
-		</nav>
-	</header>
 	<div id="wrapper">
 		<main>
 			<h2>Liste des personnages</h2>
@@ -77,9 +53,7 @@ if ($stmt->execute()) {
 			</table>
 		</main>
 	</div>
-	<footer>
-		<p>&copy; 2023 Jeu de rôle médiéval - Tous droits réservés.</p>
-	</footer>
+	<?php include "footer.php"; ?>
 </body>
 
 </html>
