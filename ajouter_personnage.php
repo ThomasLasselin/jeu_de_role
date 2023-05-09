@@ -1,6 +1,7 @@
 <?
+session_start();
 //On inclut le fichier de connexion à la BDD
-include "bdd.php"
+include "bdd.php";
 //On appelle la fonction de connexion à la BDD et on stocke notre objet PDO dans une variable
 $connexion = connexion();
 
